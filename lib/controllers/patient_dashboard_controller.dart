@@ -1,0 +1,15 @@
+import 'package:flutter/foundation.dart';
+
+class PatientDashboardController extends ChangeNotifier {
+  int _selectedIndex = 0;
+
+  int get selectedIndex => _selectedIndex;
+
+  void onTabChanged(int index) {
+    if (_selectedIndex == index) {
+      return;
+    }
+    _selectedIndex = index;
+    notifyListeners();
+  }
+}
