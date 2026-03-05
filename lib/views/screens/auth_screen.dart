@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:mon_app/views/screens/professional_dashboard_screen.dart';
 
 import '../../controllers/auth_controller.dart';
 import '../../core/theme/app_colors.dart';
@@ -85,6 +86,14 @@ class AuthScreen extends StatelessWidget {
                                     MaterialPageRoute(
                                       builder: (_) =>
                                           const PatientDashboardScreen(),
+                                    ),
+                                  );
+                                } else {
+                                  Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                      builder: (_) =>
+                                          const ProfessionalDashboardScreen(),
                                     ),
                                   );
                                 }
