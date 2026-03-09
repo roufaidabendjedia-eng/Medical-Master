@@ -11,52 +11,49 @@ class LoginBackground extends StatelessWidget {
         Container(
           decoration: const BoxDecoration(
             gradient: LinearGradient(
-              colors: [Color(0xFF4FA3E3), Color(0xFF9AD7FF), Color(0xFFF7FCFF)],
-              begin: Alignment.topCenter,
-              end: Alignment.bottomCenter,
+              colors: [Color(0xFF2E7BC4), Color(0xFF9AD7FF), Color(0xFFF7FCFF)],
+              begin: Alignment.topLeft,
+              end: Alignment.bottomRight,
             ),
           ),
         ),
-        Opacity(
-          opacity: 0.22,
+        Positioned(
+          top: -120,
+          right: -60,
           child: Container(
+            width: 240,
+            height: 240,
             decoration: const BoxDecoration(
+              shape: BoxShape.circle,
+              gradient: RadialGradient(
+                colors: [Color(0xFFBFE2FF), Colors.transparent],
+              ),
+            ),
+          ),
+        ),
+        Positioned(
+          bottom: -140,
+          left: -80,
+          child: Container(
+            width: 280,
+            height: 280,
+            decoration: const BoxDecoration(
+              shape: BoxShape.circle,
               gradient: RadialGradient(
                 colors: [Color(0xFFD9F0FF), Colors.transparent],
-                center: Alignment(-0.2, -0.6),
-                radius: 1.2,
               ),
             ),
           ),
         ),
-        Opacity(
-          opacity: 0.12,
+        Positioned(
+          bottom: 120,
+          right: -40,
           child: Container(
+            width: 160,
+            height: 160,
             decoration: const BoxDecoration(
-              gradient: LinearGradient(
-                colors: [Colors.transparent, Color(0xFF2D5F8F)],
-                begin: Alignment.topCenter,
-                end: Alignment.bottomCenter,
-              ),
-            ),
-          ),
-        ),
-        Opacity(
-          opacity: 0.12,
-          child: Container(
-            decoration: const BoxDecoration(
-              gradient: LinearGradient(
-                colors: [
-                  Colors.transparent,
-                  Colors.white,
-                  Colors.transparent,
-                  Colors.white,
-                  Colors.transparent,
-                ],
-                stops: [0.0, 0.18, 0.36, 0.58, 1.0],
-                begin: Alignment.topLeft,
-                end: Alignment.bottomRight,
-              ),
+              shape: BoxShape.circle,
+              color: Color(0xFFEBF6FF),
             ),
           ),
         ),

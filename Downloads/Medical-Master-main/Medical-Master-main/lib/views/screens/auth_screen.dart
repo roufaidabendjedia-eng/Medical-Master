@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 
 import '../../controllers/auth_controller.dart';
-import '../../core/theme/app_colors.dart';
-import '../../core/utils/input_decoration_factory.dart';
 import '../../models/user_role.dart';
 import '../widgets/backgrounds/login_background.dart';
 import '../widgets/common/delayed_fade_slide.dart';
@@ -41,7 +39,7 @@ class AuthScreen extends StatelessWidget {
       appBar: AppBar(
         backgroundColor: Colors.transparent,
         elevation: 0,
-        foregroundColor: Colors.white,
+        foregroundColor: const Color(0xFF0F2A3C),
         title: Text('Accès ${controller.roleLabel}'),
       ),
       body: Stack(
@@ -49,20 +47,93 @@ class AuthScreen extends StatelessWidget {
           const LoginBackground(),
           SafeArea(
             child: SingleChildScrollView(
-              padding: const EdgeInsets.fromLTRB(20, 40, 20, 20),
+              padding: const EdgeInsets.fromLTRB(20, 24, 20, 24),
               child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
+                crossAxisAlignment: CrossAxisAlignment.stretch,
                 children: [
                   DelayedFadeSlide(
                     delay: const Duration(milliseconds: 120),
-                    child: Text(
-                      'Renseignez vos informations pour continuer.',
-                      style: Theme.of(
-                        context,
-                      ).textTheme.titleMedium?.copyWith(color: Colors.white70),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text(
+                          'Bienvenue',
+                          style: Theme.of(context).textTheme.titleMedium
+                              ?.copyWith(
+                                color: const Color(0xFF3C6E8C),
+                                fontWeight: FontWeight.w600,
+                              ),
+                        ),
+                        const SizedBox(height: 6),
+                        Text(
+                          'Connexion rapide et sécurisée',
+                          style: Theme.of(context).textTheme.headlineSmall
+                              ?.copyWith(
+                                color: const Color(0xFF0F2A3C),
+                                fontWeight: FontWeight.w700,
+                              ),
+                        ),
+                        const SizedBox(height: 8),
+                        Text(
+                          'Renseignez vos informations pour continuer.',
+                          style: Theme.of(context).textTheme.titleMedium
+                              ?.copyWith(color: const Color(0xFF3C6E8C)),
+                        ),
+                      ],
                     ),
                   ),
-                  const SizedBox(height: 20),
+                  const SizedBox(height: 24),
+                  DelayedFadeSlide(
+                    delay: const Duration(milliseconds: 180),
+                    child: Container(
+                      padding: const EdgeInsets.all(16),
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(22),
+                        gradient: const LinearGradient(
+                          colors: [Color(0xFF5AA9E6), Color(0xFFBFE2FF)],
+                        ),
+                      ),
+                      child: Row(
+                        children: [
+                          Container(
+                            height: 48,
+                            width: 48,
+                            decoration: BoxDecoration(
+                              color: Colors.white,
+                              borderRadius: BorderRadius.circular(16),
+                            ),
+                            child: const Icon(
+                              Icons.health_and_safety,
+                              color: Color(0xFF5AA9E6),
+                            ),
+                          ),
+                          const SizedBox(width: 14),
+                          Expanded(
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Text(
+                                  controller.roleLabel,
+                                  style: Theme.of(context).textTheme.titleMedium
+                                      ?.copyWith(
+                                        color: Colors.white,
+                                        fontWeight: FontWeight.w700,
+                                      ),
+                                ),
+                                const SizedBox(height: 4),
+                                Text(
+                                  'Accès personnalisé à vos dossiers',
+                                  style: Theme.of(context).textTheme.bodyMedium
+                                      ?.copyWith(color: Colors.white),
+                                ),
+                              ],
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                  ),
+                  const SizedBox(height: 18),
                   DelayedFadeSlide(
                     delay: const Duration(milliseconds: 220),
                     child: GlassPanel(
@@ -71,21 +142,21 @@ class AuthScreen extends StatelessWidget {
                         child: Column(
                           children: [
                             TextField(
-                              decoration: buildInputDecoration(
+                              decoration: _buildInputDecoration(
                                 'Nom',
                                 icon: Icons.person,
                               ),
                             ),
                             const SizedBox(height: 14),
                             TextField(
-                              decoration: buildInputDecoration(
+                              decoration: _buildInputDecoration(
                                 'Email',
                                 icon: Icons.email,
                               ),
                             ),
                             const SizedBox(height: 14),
                             TextField(
-                              decoration: buildInputDecoration(
+                              decoration: _buildInputDecoration(
                                 'Mot de passe',
                                 icon: Icons.lock,
                               ),
@@ -94,15 +165,20 @@ class AuthScreen extends StatelessWidget {
                             const SizedBox(height: 20),
                             GlowButton(
                               label: 'Créer un compte',
-                              colors: const [kAccent, kAccent2],
+                              colors: const [
+                                Color(0xFF5AA9E6),
+                                Color(0xFF9AD7FF),
+                              ],
                               onPressed: openDashboard,
                             ),
                             const SizedBox(height: 12),
                             OutlinedButton(
                               onPressed: openDashboard,
                               style: OutlinedButton.styleFrom(
-                                foregroundColor: Colors.white,
-                                side: const BorderSide(color: Colors.white30),
+                                foregroundColor: const Color(0xFF0F2A3C),
+                                side: const BorderSide(
+                                  color: Color(0xFF9AD7FF),
+                                ),
                                 padding: const EdgeInsets.symmetric(
                                   vertical: 14,
                                 ),
@@ -122,6 +198,30 @@ class AuthScreen extends StatelessWidget {
             ),
           ),
         ],
+      ),
+    );
+  }
+
+  InputDecoration _buildInputDecoration(String label, {IconData? icon}) {
+    return InputDecoration(
+      labelText: label,
+      labelStyle: const TextStyle(color: Color(0xFF3C6E8C)),
+      prefixIcon: icon == null
+          ? null
+          : Icon(icon, color: const Color(0xFF3C6E8C)),
+      filled: true,
+      fillColor: Colors.white,
+      border: OutlineInputBorder(
+        borderRadius: BorderRadius.circular(16),
+        borderSide: const BorderSide(color: Color(0xFFD9F0FF)),
+      ),
+      enabledBorder: OutlineInputBorder(
+        borderRadius: BorderRadius.circular(16),
+        borderSide: const BorderSide(color: Color(0xFFD9F0FF)),
+      ),
+      focusedBorder: OutlineInputBorder(
+        borderRadius: BorderRadius.circular(16),
+        borderSide: const BorderSide(color: Color(0xFF5AA9E6)),
       ),
     );
   }
