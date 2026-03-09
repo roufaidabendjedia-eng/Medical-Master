@@ -1,0 +1,14 @@
+C:/Users/user/Downloads/Medical-Master-main/Medical-Master-main/build/windows/x64/runner/Debug/data/icudtl.dat
+C:/Users/user/Downloads/Medical-Master-main/Medical-Master-main/build/windows/x64/runner/Debug/flutter_windows.dll
+C:/Users/user/Downloads/Medical-Master-main/Medical-Master-main/build/windows/x64/runner/Debug/url_launcher_windows_plugin.dll
+C:/Users/user/Downloads/Medical-Master-main/Medical-Master-main/build/windows/x64/runner/Debug/data/flutter_assets/AssetManifest.bin
+C:/Users/user/Downloads/Medical-Master-main/Medical-Master-main/build/windows/x64/runner/Debug/data/flutter_assets/AssetManifest.json
+C:/Users/user/Downloads/Medical-Master-main/Medical-Master-main/build/windows/x64/runner/Debug/data/flutter_assets/assets/6e30bb0372fd68401659db9087a05971.jpg
+C:/Users/user/Downloads/Medical-Master-main/Medical-Master-main/build/windows/x64/runner/Debug/data/flutter_assets/assets/humberto-chavez-FVh_yqLR9eA-unsplash.jpg
+C:/Users/user/Downloads/Medical-Master-main/Medical-Master-main/build/windows/x64/runner/Debug/data/flutter_assets/FontManifest.json
+C:/Users/user/Downloads/Medical-Master-main/Medical-Master-main/build/windows/x64/runner/Debug/data/flutter_assets/fonts/MaterialIcons-Regular.otf
+C:/Users/user/Downloads/Medical-Master-main/Medical-Master-main/build/windows/x64/runner/Debug/data/flutter_assets/kernel_blob.bin
+C:/Users/user/Downloads/Medical-Master-main/Medical-Master-main/build/windows/x64/runner/Debug/data/flutter_assets/NativeAssetsManifest.json
+C:/Users/user/Downloads/Medical-Master-main/Medical-Master-main/build/windows/x64/runner/Debug/data/flutter_assets/NOTICES.Z
+C:/Users/user/Downloads/Medical-Master-main/Medical-Master-main/build/windows/x64/runner/Debug/data/flutter_assets/packages/cupertino_icons/assets/CupertinoIcons.ttf
+C:/Users/user/Downloads/Medical-Master-main/Medical-Master-main/build/windows/x64/runner/Debug/data/flutter_assets/shaders/ink_sparkle.frag
