@@ -1,0 +1,10 @@
+{
+  "java.import.gradle.enabled": false,
+  "java.import.gradle.wrapper.enabled": false,
+  "java.import.exclusions": [
+    "Medical-Master/android",
+    "Medical-Master/android/**",
+    "**/android",
+    "**/android/**"
+  ]
+}
